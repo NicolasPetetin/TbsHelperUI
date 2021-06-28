@@ -1,2 +1,4 @@
 /.gitignore
-*.class
+/GUIOpener.class
+/controler/
+/guiElements/
