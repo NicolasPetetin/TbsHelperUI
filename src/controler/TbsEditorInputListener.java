@@ -10,6 +10,7 @@ import guiElements.TbsEditorInput;
 import guiElements.TbsEditorOutput;
 import guiElements.TbsFrame;
 import helpers.ComponentHelper;
+import helpers.StatementHelper;
 
 public class TbsEditorInputListener implements CaretListener {
 	private TbsFrame tbsFrame;
@@ -24,7 +25,8 @@ public class TbsEditorInputListener implements CaretListener {
 		List<Component> components = ComponentHelper.getAllComponents(tbsFrame);
 		for(Component component : components) {
 			if(component instanceof TbsEditorOutput) {
-				((TbsEditorOutput) component).setText(editorIn.getText());
+				String textOut = StatementHelper.parseStatement(editorIn.getText());
+				((TbsEditorOutput) component).setText(textOut);
 				break;
 			}
 		}
