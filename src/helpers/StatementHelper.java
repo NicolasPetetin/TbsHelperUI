@@ -1,5 +1,7 @@
 package helpers;
 
+import enums.StatementType;
+
 public class StatementHelper {
 	public static String parseStatement(String statement) {
 		String res = statement;
@@ -36,5 +38,22 @@ public class StatementHelper {
 	
 	public static String removeTrailingParenthesisSpaces(String statement) {
 		return statement.replaceAll("\\s+\\)", ")");
+	}
+	
+	public static StatementType getStatementType(String statement) {
+		String stmt = parseStatement(statement);
+		if(stmt.matches("^\\s*select")) {
+			return StatementType.SELECT;
+		}else if(stmt.matches("^\\s*insert")){
+			return StatementType.INSERT;
+		}else if(stmt.matches("^\\s*update")) {
+			return StatementType.UPDATE;
+		}else if(stmt.matches("^\\s*delete")) {
+			return StatementType.DELETE;
+		}else if(stmt.matches("^\\s*alter")) {
+			return StatementType.ALTER;
+		}else {
+			throw new IllegalArgumentException();
+		}
 	}
 }
