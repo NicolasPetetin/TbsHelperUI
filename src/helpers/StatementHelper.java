@@ -27,7 +27,7 @@ public class StatementHelper {
 	}
 	
 	public static String removeSpaceCharacters(String statement) {
-		return statement.replaceAll("(\\s){1,}", "\1");
+		return statement.replaceAll("(\\s){1,}", " ");
 	}
 	
 	public static String removeLeadingParenthesisSpaces(String statement) {
