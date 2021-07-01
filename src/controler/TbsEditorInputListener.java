@@ -26,6 +26,7 @@ public class TbsEditorInputListener implements CaretListener {
 		for(Component component : components) {
 			if(component instanceof TbsEditorOutput) {
 				String textOut = StatementHelper.parseStatement(editorIn.getText());
+				textOut = StatementHelper.format(textOut);
 				((TbsEditorOutput) component).setText(textOut);
 				break;
 			}

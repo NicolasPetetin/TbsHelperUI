@@ -12,10 +12,15 @@ public class StatementHelper {
 			res = removeLeadingParenthesisSpaces(res);
 			res = removeTrailingParenthesisSpaces(res);
 			res = removeSpaceCharacters(res);
+			res = addSemiColon(res);
 		}
 		return res;
 	}
 	
+	public static String addSemiColon(String statement) {
+		return statement.endsWith(";") ? statement : statement.concat(";");
+	}
+
 	public static String removeComments(String statement) {
 		return statement.replaceAll("//.*", "");
 	}
@@ -41,19 +46,58 @@ public class StatementHelper {
 	}
 	
 	public static StatementType getStatementType(String statement) {
-		String stmt = parseStatement(statement);
-		if(stmt.matches("^\\s*select")) {
+		if(statement.matches("(?i)^\\s*select.*")) {
 			return StatementType.SELECT;
-		}else if(stmt.matches("^\\s*insert")){
+		}else if(statement.matches("(?i)^\\s*(?i)insert.*")){
 			return StatementType.INSERT;
-		}else if(stmt.matches("^\\s*update")) {
+		}else if(statement.matches("(?i)^\\s*(?i)update.*")) {
 			return StatementType.UPDATE;
-		}else if(stmt.matches("^\\s*delete")) {
+		}else if(statement.matches("(?i)^\\s*(?i)delete.*")) {
 			return StatementType.DELETE;
-		}else if(stmt.matches("^\\s*alter")) {
+		}else if(statement.matches("(?i)^\\s*(?i)alter.*")) {
 			return StatementType.ALTER;
 		}else {
 			throw new IllegalArgumentException();
 		}
+	}
+	
+	public static String format(String statement) {
+		try {
+			StatementType stmtType = getStatementType(statement);
+			switch (stmtType) {
+			case SELECT:
+				return formatSelect(statement);
+			case INSERT:
+				return formatInsert(statement);
+			case UPDATE:
+				//TODO return formatUpdate(statement);
+			case DELETE:
+				//TODO return formatDelete(statement);
+			case ALTER:
+				//TODO return formatAlter(statement);
+			default:
+				return statement;
+			}
+		}catch (IllegalArgumentException e) {
+			return statement;
+		}
+	}
+
+	private static String formatInsert(String statement) {
+		String res = statement;
+		res = res.replaceAll("(?i)insert", "INSERT");
+		res = res.replaceAll("(?i)values", "\nVALUES");
+		res = res.replaceAll("(?i)select", "\nSELECT");
+		return res;
+	}
+
+	private static String formatSelect(String statement) {
+		String res = statement;
+		res = res.replaceAll("(?i)select", "SELECT");
+		res = res.replaceAll("(?i)from", "\nFROM");
+		res = res.replaceAll("(?i)where", "\nWHERE");
+		res = res.replaceAll("(?i)order", "\nORDER");
+		res = res.replaceAll("(?i)union select", "\nUNION SELECT ");
+		return res;
 	}
 }
