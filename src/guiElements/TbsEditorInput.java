@@ -1,10 +1,9 @@
 package guiElements;
 
-import javax.swing.JEditorPane;
-
+import abstractClasses.AbstractEditor;
 import controler.TbsEditorInputListener;
 
-public class TbsEditorInput extends JEditorPane {
+public class TbsEditorInput extends AbstractEditor {
 	private static final long serialVersionUID = 8124087194160594234L; 
 	@SuppressWarnings("unused")
 	private TbsFrame tbsFrame;
@@ -19,5 +18,7 @@ public class TbsEditorInput extends JEditorPane {
 		
 		listener = new TbsEditorInputListener(tbsFrame);
 		addCaretListener(listener);
+		
+		setTabSize(4);
 	}
 }

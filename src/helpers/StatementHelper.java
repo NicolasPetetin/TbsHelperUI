@@ -95,6 +95,11 @@ public class StatementHelper {
 		String res = statement;
 		res = res.replaceAll("(?i)select", "SELECT");
 		res = res.replaceAll("(?i)from", "\nFROM");
+		res = res.replaceAll("(?i)left\\s*join", "\nLEFT JOIN");
+		res = res.replaceAll("(?i)left\\s*outer\\s*join", "\nLEFT JOIN");
+		res = res.replaceAll("(?i)right\\s*join", "\nRIGHT JOIN");
+		res = res.replaceAll("(?i)right\\s*outer\\s*join", "\nRIGHT OUTER JOIN");
+		res = res.replaceAll("(?i)inner\\s*join", "\nINNER JOIN");
 		res = res.replaceAll("(?i)where", "\nWHERE");
 		res = res.replaceAll("(?i)order", "\nORDER");
 		res = res.replaceAll("(?i)union select", "\nUNION SELECT ");

@@ -1,8 +1,8 @@
 package guiElements;
 
-import javax.swing.JEditorPane;
+import abstractClasses.AbstractEditor;
 
-public class TbsEditorOutput extends JEditorPane {
+public class TbsEditorOutput extends AbstractEditor {
 	private static final long serialVersionUID = 7882385475158382092L;
 	@SuppressWarnings("unused")
 	private TbsFrame tbsFrame;
