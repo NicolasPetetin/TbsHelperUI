@@ -8,7 +8,7 @@ public class TbsFrame extends JFrame {
 	public TbsFrame() {
 		setTitle("TBS UI Helper");
 		setSize(1000, 540);
-		setResizable(false);
+		//setResizable(false);
 		add(new TbsMainPanel(this));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
