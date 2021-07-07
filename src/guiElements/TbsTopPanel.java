@@ -18,7 +18,7 @@ public class TbsTopPanel extends JPanel {
 		border = new TbsTopPanelBorder();
 		setBorder(border);
 		
-		actionComboBox = new TbsActionComboBox();
+		actionComboBox = new TbsActionComboBox(tbsFrame);
 		add(actionComboBox, BorderLayout.NORTH);
 		
 		separator = new TbsPanelSeparator();

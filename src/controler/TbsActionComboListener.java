@@ -5,8 +5,16 @@ import java.awt.event.ActionListener;
 
 import enums.ActionComboItems;
 import guiElements.TbsActionComboBox;
+import guiElements.TbsFrame;
 
 public class TbsActionComboListener implements ActionListener {
+	@SuppressWarnings("unused")
+	private TbsFrame tbsFrame;
+
+	public TbsActionComboListener(TbsFrame tbsFrame) {
+		this.tbsFrame = tbsFrame;
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String actionCommand = e.getActionCommand();
@@ -14,18 +22,7 @@ public class TbsActionComboListener implements ActionListener {
 			TbsActionComboBox comboBox = (TbsActionComboBox) e.getSource();
 			String libItem = (String) comboBox.getSelectedItem();
 			ActionComboItems item = ActionComboItems.fromString(libItem);
-			doAction(item);
-		}
-	}
-
-	private void doAction(ActionComboItems item) {
-		switch (item) {
-		case PARSE_PERSIST:
-			//TODO
-			break;
-		case PARSE_STATEMENT:
-			//TODO
-			break;
+			TbsActionHandler.doAction(item, tbsFrame);
 		}
 	}
 }
