@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 
 public class TbsTopPanel extends JPanel {
 	private static final long serialVersionUID = 8763944186429861974L;
-	@SuppressWarnings("unused")
 	private TbsFrame tbsFrame;
 	private TbsActionComboBox actionComboBox;
 	private TbsPanelSeparator separator;
@@ -18,7 +17,7 @@ public class TbsTopPanel extends JPanel {
 		border = new TbsTopPanelBorder();
 		setBorder(border);
 		
-		actionComboBox = new TbsActionComboBox(tbsFrame);
+		actionComboBox = new TbsActionComboBox(this.tbsFrame);
 		add(actionComboBox, BorderLayout.NORTH);
 		
 		separator = new TbsPanelSeparator();

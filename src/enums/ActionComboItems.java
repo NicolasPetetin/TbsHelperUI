@@ -34,4 +34,8 @@ public enum ActionComboItems {
 		}
 		return allTextValues;
 	}
+	
+	public static ActionComboItems getDefaultValue() {
+		return PARSE_STATEMENT;
+	}
 }

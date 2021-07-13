@@ -2,24 +2,23 @@ package guiElements;
 
 import javax.swing.JPanel;
 
+import controler.TbsActionHandler;
+import enums.ActionComboItems;
+
 public class TbsBottomPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	@SuppressWarnings("unused")
-	private TbsFrame tbsFrame;
-	private TbsBottomPanelLayout botLayout;
-	private TbsEditorOutput editorOut;
-	private TbsEditorInput editorIn;
+	private TbsFrame frame;
+	private TbsBottomPanelLayout bottomLayout;
 
 	public TbsBottomPanel(TbsFrame tbsFrame) {
-		this.tbsFrame = tbsFrame; 
+		this.frame = tbsFrame;
 		
-		botLayout = new TbsBottomPanelLayout();
-		setLayout(botLayout);
-		
-		editorIn = new TbsEditorInput(tbsFrame);
-		add(editorIn);
-		
-		editorOut = new TbsEditorOutput(tbsFrame);
-		add(editorOut);
+		bottomLayout = new TbsBottomPanelLayout();
+		setLayout(bottomLayout);
+	}
+	
+	public void setDefaultBottomPanel() {
+		ActionComboItems defaultItem = ActionComboItems.getDefaultValue();
+		TbsActionHandler.doAction(defaultItem, frame);
 	}
 }

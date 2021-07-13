@@ -2,6 +2,7 @@ import guiElements.TbsFrame;
 
 public class GUIOpener {
 	public static void main(String[] args) {
-		new TbsFrame();
+		TbsFrame frame = new TbsFrame();
+		frame.afterInit();
 	}
 }

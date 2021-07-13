@@ -8,7 +8,6 @@ import guiElements.TbsActionComboBox;
 import guiElements.TbsFrame;
 
 public class TbsActionComboListener implements ActionListener {
-	@SuppressWarnings("unused")
 	private TbsFrame tbsFrame;
 
 	public TbsActionComboListener(TbsFrame tbsFrame) {

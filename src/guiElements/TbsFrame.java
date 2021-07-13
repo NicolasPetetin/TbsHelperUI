@@ -4,13 +4,25 @@ import javax.swing.JFrame;
 
 public class TbsFrame extends JFrame {
 	private static final long serialVersionUID = -7003371634572107802L;
-
+	private TbsMainPanel mainPanel;
+	
 	public TbsFrame() {
+		super();
+		
+		this.mainPanel = new TbsMainPanel(this);
+		add(mainPanel);
+
 		setTitle("TBS UI Helper");
 		setSize(1000, 540);
-		//setResizable(false);
-		add(new TbsMainPanel(this));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
+	}
+	
+	public TbsMainPanel getMainPanel() {
+		return mainPanel;
+	}
+
+	public void afterInit() {
+		getMainPanel().getBottomPanel().setDefaultBottomPanel();
 	}
 }

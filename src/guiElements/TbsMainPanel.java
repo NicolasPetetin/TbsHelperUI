@@ -6,24 +6,25 @@ import javax.swing.JPanel;
 
 public class TbsMainPanel extends JPanel {
 	private static final long serialVersionUID = 7275433749447673564L;
-	@SuppressWarnings("unused")
-	private TbsFrame tbsFrame;
+	private TbsFrame frame;
 	private TbsTopPanel topPanel;
 	private TbsBottomPanel bottomPanel;
 	private TbsMainLayout tbsMainLayout;
 	
 	public TbsMainPanel(TbsFrame tbsFrame) {
-		this.tbsFrame = tbsFrame;
+		this.frame = tbsFrame;
 		
 		this.tbsMainLayout = new TbsMainLayout();
 		setLayout(tbsMainLayout);
 				
-		topPanel = new TbsTopPanel(tbsFrame);
+		topPanel = new TbsTopPanel(frame);
 		add(topPanel, BorderLayout.NORTH);
 		
-		bottomPanel = new TbsBottomPanel(tbsFrame);
-		add(bottomPanel, BorderLayout.CENTER);
-		
-		
+		bottomPanel = new TbsBottomPanel(frame);
+		add(bottomPanel, BorderLayout.CENTER);	
+	}
+	
+	public TbsBottomPanel getBottomPanel() {
+		return bottomPanel;
 	}
 }

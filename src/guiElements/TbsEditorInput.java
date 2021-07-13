@@ -20,5 +20,6 @@ public class TbsEditorInput extends AbstractEditor {
 		addCaretListener(listener);
 		
 		setTabSize(4);
+		requestFocus();
 	}
 }
