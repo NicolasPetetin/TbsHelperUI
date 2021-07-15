@@ -1,4 +1,4 @@
-package guiElements;
+package guiElements.parse.statement;
 
 import java.awt.GridLayout;
 

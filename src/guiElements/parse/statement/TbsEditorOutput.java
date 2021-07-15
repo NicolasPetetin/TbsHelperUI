@@ -1,6 +1,7 @@
-package guiElements;
+package guiElements.parse.statement;
 
 import abstractClasses.AbstractEditor;
+import guiElements.TbsFrame;
 
 public class TbsEditorOutput extends AbstractEditor {
 	private static final long serialVersionUID = 7882385475158382092L;

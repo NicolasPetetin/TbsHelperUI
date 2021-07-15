@@ -1,6 +1,8 @@
-package guiElements;
+package guiElements.parse.statement;
 
 import javax.swing.JPanel;
+
+import guiElements.TbsFrame;
 
 public class TbsStatementParserPanel extends JPanel {
 	private static final long serialVersionUID = 1660615527917625521L;

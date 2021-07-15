@@ -1,4 +1,4 @@
-package guiElements;
+package guiElements.menu;
 
 import javax.swing.JMenu;
 

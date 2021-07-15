@@ -2,6 +2,8 @@ package guiElements;
 
 import javax.swing.JFrame;
 
+import guiElements.menu.TbsMenuBar;
+
 public class TbsFrame extends JFrame {
 	private static final long serialVersionUID = -7003371634572107802L;
 	private TbsMainPanel mainPanel;

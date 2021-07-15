@@ -6,9 +6,9 @@ import java.util.List;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 
-import guiElements.TbsEditorInput;
-import guiElements.TbsEditorOutput;
 import guiElements.TbsFrame;
+import guiElements.parse.statement.TbsEditorInput;
+import guiElements.parse.statement.TbsEditorOutput;
 import helpers.ComponentHelper;
 import helpers.StatementHelper;
 

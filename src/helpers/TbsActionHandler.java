@@ -3,7 +3,7 @@ package helpers;
 import enums.ActionComboItems;
 import guiElements.TbsBottomPanel;
 import guiElements.TbsFrame;
-import guiElements.TbsStatementParserPanel;
+import guiElements.parse.statement.TbsStatementParserPanel;
 
 public class TbsActionHandler {
 	public static void doAction(ActionComboItems item, TbsFrame tbsFrame) {
