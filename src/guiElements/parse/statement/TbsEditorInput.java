@@ -2,6 +2,7 @@ package guiElements.parse.statement;
 
 import abstractClasses.AbstractEditor;
 import controler.TbsEditorInputListener;
+import controler.TbsEditorMouseListener;
 import guiElements.TbsFrame;
 
 public class TbsEditorInput extends AbstractEditor {
@@ -10,6 +11,7 @@ public class TbsEditorInput extends AbstractEditor {
 	private TbsFrame tbsFrame;
 	private TbsEditorInputBorder border;
 	private TbsEditorInputListener listener;
+	private TbsEditorMouseListener mouseListener;
 	
 	public TbsEditorInput(TbsFrame tbsFrame) {
 		this.tbsFrame = tbsFrame;
@@ -19,6 +21,9 @@ public class TbsEditorInput extends AbstractEditor {
 		
 		listener = new TbsEditorInputListener(tbsFrame);
 		addCaretListener(listener);
+		
+		mouseListener = new TbsEditorMouseListener(tbsFrame);
+		addMouseListener(mouseListener);
 		
 		setTabSize(4);
 		requestFocus();

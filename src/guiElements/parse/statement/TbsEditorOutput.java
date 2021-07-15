@@ -1,6 +1,7 @@
 package guiElements.parse.statement;
 
 import abstractClasses.AbstractEditor;
+import controler.TbsEditorMouseListener;
 import guiElements.TbsFrame;
 
 public class TbsEditorOutput extends AbstractEditor {
@@ -8,6 +9,7 @@ public class TbsEditorOutput extends AbstractEditor {
 	@SuppressWarnings("unused")
 	private TbsFrame tbsFrame;
 	private TbsEditorOutputBorder border;
+	private TbsEditorMouseListener mouseListener;
 	
 	public TbsEditorOutput(TbsFrame tbsFrame) {
 		this.tbsFrame = tbsFrame;
@@ -15,6 +17,9 @@ public class TbsEditorOutput extends AbstractEditor {
 		border = new TbsEditorOutputBorder("Sortie");
 		setBorder(border);
 		
-		setEditable(false);
+		mouseListener = new TbsEditorMouseListener(tbsFrame);
+		addMouseListener(mouseListener);
+
+		setEditable(false);		
 	}
 }
