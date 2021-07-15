@@ -1,4 +1,4 @@
-package controler;
+package helpers;
 
 import enums.ActionComboItems;
 import guiElements.TbsBottomPanel;
@@ -25,7 +25,6 @@ public class TbsActionHandler {
 		TbsBottomPanel bottomPanel = tbsFrame.getMainPanel().getBottomPanel();
 		bottomPanel.removeAll();
 		bottomPanel.add(new TbsStatementParserPanel(tbsFrame));
-		tbsFrame.repaint();
 		tbsFrame.revalidate();
 	}
 }

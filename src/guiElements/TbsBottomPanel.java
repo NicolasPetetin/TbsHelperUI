@@ -2,8 +2,8 @@ package guiElements;
 
 import javax.swing.JPanel;
 
-import controler.TbsActionHandler;
 import enums.ActionComboItems;
+import helpers.TbsActionHandler;
 
 public class TbsBottomPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
