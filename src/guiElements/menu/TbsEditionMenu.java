@@ -9,14 +9,14 @@ public class TbsEditionMenu extends JMenu {
 	private TbsPasteMenuItem pasteItem;
 	
 	public TbsEditionMenu() {
-		this.pasteItem = new TbsPasteMenuItem();
-		add(pasteItem);
+		this.copyItem = new TbsCopyMenuItem();
+		add(copyItem);
 		
 		this.cutItem = new TbsCutMenuItem();
 		add(cutItem);
 		
-		this.copyItem = new TbsCopyMenuItem();
-		add(copyItem);
+		this.pasteItem = new TbsPasteMenuItem();
+		add(pasteItem);
 
 		setText("Edition");
 	}

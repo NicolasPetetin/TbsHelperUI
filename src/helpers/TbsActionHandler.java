@@ -3,6 +3,7 @@ package helpers;
 import enums.ActionComboItems;
 import guiElements.TbsBottomPanel;
 import guiElements.TbsFrame;
+import guiElements.parse.persist.TbsPersistParserPanel;
 import guiElements.parse.statement.TbsStatementParserPanel;
 
 public class TbsActionHandler {
@@ -18,7 +19,10 @@ public class TbsActionHandler {
 	}
 
 	private static void doParsePersistAction(TbsFrame tbsFrame) {
-		System.out.println("Action : Parse persist !");	
+		TbsBottomPanel bottomPanel = tbsFrame.getMainPanel().getBottomPanel();
+		bottomPanel.removeAll();
+		bottomPanel.add(new TbsPersistParserPanel(tbsFrame));
+		tbsFrame.revalidate();	
 	}
 
 	private static void doParseStatementAction(TbsFrame tbsFrame) {

@@ -16,7 +16,7 @@ public class TbsFrame extends JFrame {
 		
 		this.popupMenu = new TbsPopupMenu();
 		
-		this.menuBar = new TbsMenuBar();
+		this.menuBar = new TbsMenuBar(this);
 		setJMenuBar(menuBar);
 
 		this.mainPanel = new TbsMainPanel(this);
