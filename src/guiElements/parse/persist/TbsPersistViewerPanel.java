@@ -1,6 +1,5 @@
 package guiElements.parse.persist;
 
-import java.awt.Color;
 import java.awt.GridBagConstraints;
 
 import javax.swing.JPanel;
@@ -27,7 +26,9 @@ public class TbsPersistViewerPanel extends JPanel {
 		constr.weightx = 1.0D;
 		constr.weighty = 1.0D;
 		list = new TbsPersistList();
+		list.getModel().add("Test NPN 1");
+		list.getModel().add("Test NPN 2");
+		list.getModel().add("Test NPN 3");
 		add(list, constr);
-		setBackground(Color.red);
 	}
 }

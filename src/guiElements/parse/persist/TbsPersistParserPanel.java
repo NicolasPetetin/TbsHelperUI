@@ -1,5 +1,6 @@
 package guiElements.parse.persist;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 
 import javax.swing.JPanel;

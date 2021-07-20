@@ -10,4 +10,8 @@ public class TbsPersistList extends JList<String> {
 		model = new TbsPersistListModel();
 		super.setModel(model);
 	}
+	
+	public TbsPersistListModel getModel() {
+		return model;
+	}
 }
