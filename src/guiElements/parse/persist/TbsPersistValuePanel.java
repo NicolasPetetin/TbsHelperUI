@@ -1,13 +1,17 @@
 package guiElements.parse.persist;
 
-import java.awt.Color;
-
 import javax.swing.JPanel;
 
 public class TbsPersistValuePanel extends JPanel {
 	private static final long serialVersionUID = 9208297879702415463L;
+	private TbsPersistValueLabel label;
+	private TbsPersistValueInput input;
 
 	public TbsPersistValuePanel() {
-		setBackground(Color.gray);
+		label = new TbsPersistValueLabel();
+		add(label);
+		
+		input = new TbsPersistValueInput();
+		add(input);
 	}
 }
