@@ -13,13 +13,13 @@ public class TbsPopupMenu extends JPopupMenu {
 	private TbsPasteMenuItem pasteItem;
 	
 	public TbsPopupMenu() {
-		pasteItem = new TbsPasteMenuItem();
-		add(pasteItem);
+		copyItem = new TbsCopyMenuItem();
+		add(copyItem);
 		
 		cutItem = new TbsCutMenuItem();
 		add(cutItem);
 		
-		copyItem = new TbsCopyMenuItem();
-		add(copyItem);
+		pasteItem = new TbsPasteMenuItem();
+		add(pasteItem);
 	}
 }
