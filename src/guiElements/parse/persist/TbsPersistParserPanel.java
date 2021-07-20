@@ -32,7 +32,7 @@ public class TbsPersistParserPanel extends JPanel {
 		constr.gridy = 1;
 		constr.gridheight = 2;
 		constr.weightx = 1.0D;
-		constr.weighty = 3.0D;
+		constr.weighty = 6.0D;
 		bottomPanel = new TbsPersistViewerPanel(frame);
 		add(bottomPanel, constr);
 	}

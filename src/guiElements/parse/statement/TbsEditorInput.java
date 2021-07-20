@@ -1,6 +1,7 @@
 package guiElements.parse.statement;
 
 import abstractClasses.AbstractEditor;
+import constants.TbsConstants;
 import controler.TbsEditorInputListener;
 import controler.TbsEditorMouseListener;
 import guiElements.TbsFrame;
@@ -25,7 +26,7 @@ public class TbsEditorInput extends AbstractEditor {
 		mouseListener = new TbsEditorMouseListener(tbsFrame);
 		addMouseListener(mouseListener);
 		
-		setTabSize(4);
+		setTabSize(TbsConstants.DEFAULT_TAB_SIZE);
 		requestFocus();
 	}
 }
