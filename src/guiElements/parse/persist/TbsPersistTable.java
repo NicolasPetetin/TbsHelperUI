@@ -1,5 +1,7 @@
 package guiElements.parse.persist;
 
+import java.awt.Color;
+
 import javax.swing.JTable;
 
 public class TbsPersistTable extends JTable {
@@ -8,6 +10,11 @@ public class TbsPersistTable extends JTable {
 	
 	public TbsPersistTable() {
 		model = new TbsPersistTableModel();
+		model.setDefaultTable();
 		setModel(model);
+		
+		setBackground(Color.WHITE);
+		setFillsViewportHeight(true);
+		setVisible(true);
 	}
 }

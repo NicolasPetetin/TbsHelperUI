@@ -36,7 +36,7 @@ public class TbsPersistViewerPanel extends JPanel {
 		constr.fill = GridBagConstraints.BOTH;
 		constr.gridx = 1;
 		constr.gridy = 0;
-		constr.weightx = 9.0D;
+		constr.weightx = 7.0D;
 		constr.weighty = 1.0D;
 		panel = new TbsPersistDescriptionPanel();
 		add(panel, constr);

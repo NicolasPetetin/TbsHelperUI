@@ -1,5 +1,7 @@
 package guiElements.parse.persist;
 
+import java.awt.Color;
+
 import javax.swing.JPanel;
 
 public class TbsPersistValuePanel extends JPanel {
@@ -13,5 +15,7 @@ public class TbsPersistValuePanel extends JPanel {
 		
 		input = new TbsPersistValueInput();
 		add(input);
+		
+		setBackground(Color.WHITE);
 	}
 }

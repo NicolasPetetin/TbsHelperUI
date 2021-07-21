@@ -1,16 +1,19 @@
 package guiElements.parse.persist;
 
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
+import java.awt.BorderLayout;
 
-public class TbsPersistTablePanel extends JScrollPane {
+import javax.swing.JPanel;
+
+public class TbsPersistTablePanel extends JPanel{
 	private static final long serialVersionUID = -3724351118371921819L;
-	private TbsPersistTable table;
+	private TbsPersistTableScrollPane scrollPane;
+	private TbsPersistTableLayout layout;
 
 	public TbsPersistTablePanel() {
-		table = new TbsPersistTable();
-		add(table);
+		layout = new TbsPersistTableLayout();
+		setLayout(layout);
 		
-		setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scrollPane = new TbsPersistTableScrollPane();
+		add(scrollPane, BorderLayout.CENTER);
 	}
 }

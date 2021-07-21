@@ -1,61 +1,19 @@
 package guiElements.parse.persist;
 
-import javax.swing.event.TableModelListener;
-import javax.swing.table.TableModel;
+import javax.swing.table.DefaultTableModel;
 
-import model.TbsPersistence;
-
-public class TbsPersistTableModel implements TableModel {
-	@Override
-	public int getRowCount() {
-		// TODO Auto-generated method stub
-		return 0;
+public class TbsPersistTableModel extends DefaultTableModel {
+	private static final long serialVersionUID = -1847811404616242229L;
+	
+	public void setDefaultTable() {
+		String[] columns = {"Test NPN"};
+		setColumnIdentifiers(columns);
+		
+		String[][] data = {
+				{"Test 1"},
+				{"Test 2"},
+				{"Test 3"}
+		};
+		setDataVector(data, columns);
 	}
-
-	@Override
-	public int getColumnCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String getColumnName(int columnIndex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Class<?> getColumnClass(int columnIndex) {
-		return String.class;
-	}
-
-	@Override
-	public boolean isCellEditable(int rowIndex, int columnIndex) {
-		return true;
-	}
-
-	@Override
-	public Object getValueAt(int rowIndex, int columnIndex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void addTableModelListener(TableModelListener l) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void removeTableModelListener(TableModelListener l) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
