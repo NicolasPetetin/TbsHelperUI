@@ -2,6 +2,8 @@ package guiElements.parse.persist;
 
 import javax.swing.JList;
 
+import constants.TbsConstants;
+
 public class TbsPersistList extends JList<String> {
 	private static final long serialVersionUID = -3431992362437957421L;
 	private TbsPersistListModel model;
@@ -16,7 +18,7 @@ public class TbsPersistList extends JList<String> {
 	}
 	
 	public void setDefaultData() {
-		model.add("Pas de persistences !");
+		model.add(TbsConstants.NO_PRINTABLE_PERSIST);
 	}
 	
 	public TbsPersistListModel getModel() {

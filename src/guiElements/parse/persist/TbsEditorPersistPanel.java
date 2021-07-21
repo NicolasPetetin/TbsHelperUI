@@ -1,23 +1,21 @@
 package guiElements.parse.persist;
 
-import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import guiElements.TbsFrame;
 
-public class TbsEditorPersistPanel extends JPanel{
+public class TbsEditorPersistPanel extends JScrollPane{
 	private static final long serialVersionUID = 2512516054460586732L;
 	@SuppressWarnings("unused")
 	private TbsFrame frame;
 	private TbsEditorPersist editor;
-	private TbsEditorPersistLayout layout;
 	
 	public TbsEditorPersistPanel(TbsFrame frame) {
 		this.frame = frame;
 		
-		layout = new TbsEditorPersistLayout();
-		setLayout(layout);
+		setBorder(null);
 		
 		editor = new TbsEditorPersist(frame);
-		add(editor);
+		getViewport().add(editor);
 	}
 }
