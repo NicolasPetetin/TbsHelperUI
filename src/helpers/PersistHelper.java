@@ -16,6 +16,6 @@ public class PersistHelper {
 			String value = persistData[1];
 			result.add(name, value);
 		}
-		return null;
+		return result;
 	}
 }

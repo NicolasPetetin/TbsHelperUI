@@ -1,9 +1,15 @@
 package guiElements;
 
+import java.awt.Component;
+import java.util.List;
+import java.util.Optional;
+
 import javax.swing.JFrame;
 
 import guiElements.menu.TbsMenuBar;
+import guiElements.parse.persist.TbsPersistList;
 import guiElements.popupmenu.TbsPopupMenu;
+import helpers.ComponentHelper;
 
 public class TbsFrame extends JFrame {
 	private static final long serialVersionUID = -7003371634572107802L;
@@ -38,5 +44,11 @@ public class TbsFrame extends JFrame {
 
 	public TbsPopupMenu getPopupMenu() {
 		return popupMenu;
+	}
+	
+	public TbsPersistList getListPersist() {
+		List<Component> allComponents = ComponentHelper.getAllComponents(this);
+		Optional<Component> editorPersist = allComponents.stream().filter(comp -> (comp != null && comp.getClass().equals(TbsPersistList.class))).findFirst();
+		return (TbsPersistList) editorPersist.get();
 	}
 }

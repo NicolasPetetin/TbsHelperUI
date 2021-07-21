@@ -19,7 +19,8 @@ public class TbsPersistList extends JList<String> {
 	}
 	
 	public void setDefaultData() {
-		model.add(TbsConstants.NO_PRINTABLE_PERSIST);
+		model.clear();
+		model.addElement(TbsConstants.NO_PRINTABLE_PERSIST);
 	}
 	
 	public TbsPersistListModel getModel() {

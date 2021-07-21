@@ -7,20 +7,19 @@ import guiElements.TbsFrame;
 
 public class TbsEditorPersist extends AbstractEditor {
 	private static final long serialVersionUID = -5914847088717244068L;
-	@SuppressWarnings("unused")
 	private TbsFrame frame;
 	private TbsEditorPersistBorder border;
 	private TbsEditorPersistListener listener;
 	
-	public TbsEditorPersist(TbsFrame frame) {
-		this.frame = frame;
+	public TbsEditorPersist(TbsFrame tbsFrame) {
+		this.frame = tbsFrame;
 		
 		border = new TbsEditorPersistBorder();
 		setBorder(border);
 		
 		setTabSize(TbsConstants.DEFAULT_TAB_SIZE);
 		
-		listener = new TbsEditorPersistListener();
+		listener = new TbsEditorPersistListener(frame);
 		addCaretListener(listener);
 	}
 }

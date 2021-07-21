@@ -21,4 +21,8 @@ public class TbsPersistence {
 	public void clear() {
 		values = new HashMap<String, String>();
 	}
+	
+	public boolean exists(String name) {
+		return values.containsKey(name);
+	}
 }
