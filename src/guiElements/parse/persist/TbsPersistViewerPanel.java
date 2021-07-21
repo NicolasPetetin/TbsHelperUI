@@ -27,9 +27,7 @@ public class TbsPersistViewerPanel extends JPanel {
 		constr.weightx = 1.0D;
 		constr.weighty = 1.0D;
 		list = new TbsPersistList();
-		list.getModel().add("Test NPN 1");
-		list.getModel().add("Test NPN 2");
-		list.getModel().add("Test NPN 3");
+		list.setDefaultData();
 		add(list, constr);
 		
 		constr = new GridBagConstraints();

@@ -11,9 +11,9 @@ public class TbsPersistTable extends JTable {
 	public TbsPersistTable() {
 		model = new TbsPersistTableModel();
 		model.setDefaultTable();
+		setBackground(Color.LIGHT_GRAY);
 		setModel(model);
 		
-		setBackground(Color.WHITE);
 		setFillsViewportHeight(true);
 		setVisible(true);
 	}

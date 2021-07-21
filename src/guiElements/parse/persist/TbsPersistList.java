@@ -15,6 +15,10 @@ public class TbsPersistList extends JList<String> {
 		setBorder(border);
 	}
 	
+	public void setDefaultData() {
+		model.add("Pas de persistences !");
+	}
+	
 	public TbsPersistListModel getModel() {
 		return model;
 	}
