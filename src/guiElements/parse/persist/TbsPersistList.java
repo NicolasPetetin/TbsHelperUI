@@ -12,6 +12,7 @@ public class TbsPersistList extends JList<String> {
 	public TbsPersistList() {
 		model = new TbsPersistListModel();
 		super.setModel(model);
+		setEnabled(false);
 		
 		border = new TbsPersistListBorder();
 		setBorder(border);
