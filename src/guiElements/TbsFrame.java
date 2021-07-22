@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 
 import guiElements.menu.TbsMenuBar;
 import guiElements.parse.persist.TbsPersistList;
+import guiElements.parse.persist.TbsPersistTable;
 import guiElements.popupmenu.TbsPopupMenu;
 import helpers.ComponentHelper;
 
@@ -50,5 +51,11 @@ public class TbsFrame extends JFrame {
 		List<Component> allComponents = ComponentHelper.getAllComponents(this);
 		Optional<Component> editorPersist = allComponents.stream().filter(comp -> (comp != null && comp.getClass().equals(TbsPersistList.class))).findFirst();
 		return (TbsPersistList) editorPersist.get();
+	}
+	
+	public TbsPersistTable getTablePersist() {
+		List<Component> allComponents = ComponentHelper.getAllComponents(this);
+		Optional<Component> editorPersist = allComponents.stream().filter(comp -> (comp != null && comp.getClass().equals(TbsPersistTable.class))).findFirst();
+		return (TbsPersistTable) editorPersist.get();
 	}
 }

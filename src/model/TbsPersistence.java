@@ -25,4 +25,8 @@ public class TbsPersistence {
 	public boolean exists(String name) {
 		return values.containsKey(name);
 	}
+	
+	public Map<String, String> getValues(){
+		return values;
+	}
 }
