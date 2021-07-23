@@ -36,10 +36,16 @@ public class TbsPersistListListener implements ListSelectionListener{
 	private void handleTablePersist(TbsPersistence persist, String selectedValue) {
 		TbsPersistTable table = frame.getTablePersist();
 		TbsPersistTableModel tableModel = table.getModel();
-		String[] columns = PersistHelper.getTableColumns(persist, selectedValue);
-		tableModel.setColumnIdentifiers(columns);
-		String[][] data = PersistHelper.getTableData(persist, columns, selectedValue);
-		tableModel.setDataVector(data, columns);
-		table.setBackground(Color.WHITE);
+		int nbRows = PersistHelper.getTableNbRows(persist, selectedValue);
+		if(nbRows > 0) {
+			String[] columns = PersistHelper.getTableColumns(persist, selectedValue);
+			tableModel.setColumnIdentifiers(columns);
+			String[][] data = PersistHelper.getTableData(persist, columns, selectedValue);
+			
+			tableModel.setDataVector(data, columns);
+			table.setBackground(Color.WHITE);
+		}else {
+			tableModel.setDefaultTable();
+		}
 	}
 }

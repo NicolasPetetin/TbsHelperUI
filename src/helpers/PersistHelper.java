@@ -35,8 +35,14 @@ public class PersistHelper {
 		Map<String, String> persistValues = persist.getValues();
 		for(String key : persistValues.keySet()) {
 			String beginPersist = getBeginPersist(key);
-			if(!result.stream().anyMatch(resPersist -> resPersist.startsWith(beginPersist))) {
-				result.add(beginPersist);
+			if(isTableauPersist(persist, beginPersist)) {
+				if(!result.contains(beginPersist)) {					
+					result.add(beginPersist);
+				}
+			}else {
+				if(!result.contains(beginPersist)) {					
+					result.add(key);
+				}
 			}
 		}
 		
@@ -59,15 +65,15 @@ public class PersistHelper {
 		return persistName.matches(".+\\..+\\d+");
 	}
 	
-	public static boolean isPersistForTable(String key, String persistName) {
-		return persistName.equals(getBeginPersist(key));
+	public static boolean isPersistForTable(TbsPersistence persist, String key, String persistName) {
+		return persistName.equals(getBeginPersist(key)) && isTableauPersist(persist, persistName);
 	}
 	
 	public static String[] getTableColumns(TbsPersistence persist, String persistName) {
 		Set<String> columns = new HashSet<String>();
 		Map<String, String> persists = persist.getValues();
 		for(String key : persists.keySet()) {
-			if(isColumnPersist(key) && isPersistForTable(key, persistName)) {
+			if(isColumnPersist(key) && isPersistForTable(persist, key, persistName)) {
 				columns.add(getColumnName(key, persistName));
 			}
 		}
@@ -91,14 +97,14 @@ public class PersistHelper {
 		String[][] result = new String[nbRows][columns.length];
 		if(nbRows != 0) {
 			Map<String, String> persists = persist.getValues();
-			int currentLine = 0;
 			for(String key : persists.keySet()) {
-				if(isColumnPersist(key) && isPersistForTable(key, persistName)){
+				if(isColumnPersist(key) && isPersistForTable(persist, key, persistName)){
 					for(int i=0; i<columns.length; i++) {
 						String column = columns[i];
 						if(getColumnName(key, persistName).equals(column)) {
 							String persistValue = persist.get(key);
-							result[currentLine][i] = persistValue;
+							int currentRow = getRowNumber(key);
+							result[currentRow][i] = persistValue;
 							break;
 						}
 					}
@@ -106,5 +112,12 @@ public class PersistHelper {
 			}
 		}
 		return result;
+	}
+	
+	public static Integer getRowNumber(String persistName) {
+		Pattern pattern = Pattern.compile(".+\\.\\D+(\\d+)");
+		Matcher matcher = pattern.matcher(persistName);
+		matcher.find();
+		return Integer.parseInt(matcher.group(1)) - 1;
 	}
 }
