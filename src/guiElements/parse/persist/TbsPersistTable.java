@@ -15,12 +15,10 @@ public class TbsPersistTable extends JTable {
 	public TbsPersistTable() {
 		model = new TbsPersistTableModel();
 		model.setDefaultTable();
-		setBackground(Color.LIGHT_GRAY);
 		setModel(model);
 		setDefaultHeaderFont();
-		
+		setEnabled(false);
 		setFillsViewportHeight(true);
-		setVisible(true);
 	}
 
 	private void setDefaultHeaderFont() {
@@ -35,5 +33,15 @@ public class TbsPersistTable extends JTable {
 		newAttributes.put(TextAttribute.WEIGHT, TextAttribute.WEIGHT_BOLD);
 		Font defaultFont = Font.getFont(newAttributes);
 		getTableHeader().setFont(defaultFont);
+	}
+	
+	public TbsPersistTableModel getModel() {
+		return model;
+	}
+	
+	@Override
+	public void setEnabled(boolean enabled) {
+		this.setBackground(enabled ? Color.WHITE : Color.LIGHT_GRAY);
+		super.setEnabled(enabled);
 	}
 }

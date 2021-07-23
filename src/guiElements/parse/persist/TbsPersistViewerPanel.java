@@ -26,7 +26,7 @@ public class TbsPersistViewerPanel extends JPanel {
 		constr.gridy = 0;
 		constr.weightx = 1.0D;
 		constr.weighty = 1.0D;
-		list = new TbsPersistList();
+		list = new TbsPersistList(frame);
 		list.setDefaultData();
 		add(list, constr);
 		

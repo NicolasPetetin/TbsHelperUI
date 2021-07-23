@@ -7,6 +7,7 @@ import java.util.Optional;
 import javax.swing.JFrame;
 
 import guiElements.menu.TbsMenuBar;
+import guiElements.parse.persist.TbsEditorPersist;
 import guiElements.parse.persist.TbsPersistList;
 import guiElements.parse.persist.TbsPersistTable;
 import guiElements.popupmenu.TbsPopupMenu;
@@ -45,6 +46,12 @@ public class TbsFrame extends JFrame {
 
 	public TbsPopupMenu getPopupMenu() {
 		return popupMenu;
+	}
+	
+	public TbsEditorPersist getEditorPersist() {
+		List<Component> allComponents = ComponentHelper.getAllComponents(this);
+		Optional<Component> editorPersist = allComponents.stream().filter(comp -> (comp != null && comp.getClass().equals(TbsEditorPersist.class))).findFirst();
+		return (TbsEditorPersist) editorPersist.get();
 	}
 	
 	public TbsPersistList getListPersist() {

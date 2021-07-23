@@ -14,8 +14,8 @@ public class TbsPersistence {
 		values.put(name, value);
 	}
 	
-	public void get(String name) {
-		values.get(name);
+	public String get(String name) {
+		return values.get(name);
 	}
 	
 	public void clear() {
