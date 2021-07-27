@@ -10,6 +10,8 @@ import guiElements.parse.persist.TbsEditorPersist;
 import guiElements.parse.persist.TbsPersistList;
 import guiElements.parse.persist.TbsPersistTable;
 import guiElements.parse.persist.TbsPersistTableModel;
+import guiElements.parse.persist.TbsPersistValueInput;
+import helpers.ComponentHelper;
 import helpers.PersistHelper;
 import model.TbsPersistence;
 
@@ -29,8 +31,17 @@ public class TbsPersistListListener implements ListSelectionListener{
 		if(PersistHelper.isTableauPersist(persist, selectedValue)) {
 			handleTablePersist(persist, selectedValue);
 		}else {
-			//TODO
+			handleValuePersist(persist, selectedValue);
 		}
+	}
+
+	private void handleValuePersist(TbsPersistence persist, String selectedValue) {
+		TbsPersistValueInput input = (TbsPersistValueInput) ComponentHelper.getComponentByClass(frame, TbsPersistValueInput.class);
+		input.setEditable(true);
+		input.setText(persist.get(selectedValue));
+		TbsPersistTable table = (TbsPersistTable) ComponentHelper.getComponentByClass(frame, TbsPersistTable.class);
+		table.setEnabled(false);
+		table.getModel().setDefaultTable();
 	}
 
 	private void handleTablePersist(TbsPersistence persist, String selectedValue) {
@@ -45,7 +56,11 @@ public class TbsPersistListListener implements ListSelectionListener{
 			tableModel.setDataVector(data, columns);
 			table.setBackground(Color.WHITE);
 		}else {
-			tableModel.setDefaultTable();
+			tableModel.setEmptyTable();
+			table.setEnabled(true);
 		}
+		TbsPersistValueInput input = (TbsPersistValueInput) ComponentHelper.getComponentByClass(frame, TbsPersistValueInput.class);
+		input.setEditable(false);
+		input.clear();
 	}
 }

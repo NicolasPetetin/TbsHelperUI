@@ -13,4 +13,11 @@ public class TbsPersistTableModel extends DefaultTableModel {
 		String[][] data = {};
 		setDataVector(data, columns);
 	}
+	
+	public void setEmptyTable() {
+		String[] columns = {TbsConstants.EMPTY_TABLE_PERSIST};
+		setColumnIdentifiers(columns);
+		String[][] data = {};
+		setDataVector(data, columns);
+	}
 }

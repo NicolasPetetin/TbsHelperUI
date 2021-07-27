@@ -11,4 +11,8 @@ public class TbsPersistValueInput extends JTextField {
 		setPreferredSize(new Dimension(200, (int) (super.getPreferredSize().getHeight())));
 		setEditable(false);
 	}
+	
+	public void clear() {
+		setText("");
+	}
 }
