@@ -18,7 +18,7 @@ public class StatementHelper {
 	}
 	
 	public static String addSemiColon(String statement) {
-		return statement.endsWith(";") ? statement : statement.concat(";");
+		return statement.trim().endsWith(";") ? statement : statement.concat(";");
 	}
 
 	public static String removeComments(String statement) {
