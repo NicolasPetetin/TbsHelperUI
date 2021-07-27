@@ -11,7 +11,7 @@ public class TbsPersistViewerPanel extends JPanel {
 	@SuppressWarnings("unused")
 	private TbsFrame frame;
 	private TbsPersistViewerLayout layout;
-	private TbsPersistList list;
+	private TbsPersistListPane listPane;
 	private TbsPersistDescriptionPanel panel;
 	
 	public TbsPersistViewerPanel(TbsFrame frame) {
@@ -26,9 +26,8 @@ public class TbsPersistViewerPanel extends JPanel {
 		constr.gridy = 0;
 		constr.weightx = 1.0D;
 		constr.weighty = 1.0D;
-		list = new TbsPersistList(frame);
-		list.setDefaultData();
-		add(list, constr);
+		listPane = new TbsPersistListPane(frame);
+		add(listPane, constr);
 		
 		constr = new GridBagConstraints();
 		constr.fill = GridBagConstraints.BOTH;

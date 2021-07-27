@@ -11,7 +11,6 @@ public class TbsPersistList extends JList<String> {
 	@SuppressWarnings("unused")
 	private TbsFrame frame;
 	private TbsPersistListModel model;
-	private TbsPersistListBorder border;
 	private TbsPersistListListener listener;
 	
 	public TbsPersistList(TbsFrame frame) {
@@ -20,9 +19,6 @@ public class TbsPersistList extends JList<String> {
 		model = new TbsPersistListModel();
 		super.setModel(model);
 		setEnabled(false);
-		
-		border = new TbsPersistListBorder();
-		setBorder(border);
 		
 		listener = new TbsPersistListListener(frame);
 		addListSelectionListener(listener);
