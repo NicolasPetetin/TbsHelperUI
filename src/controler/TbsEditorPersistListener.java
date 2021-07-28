@@ -38,7 +38,9 @@ public class TbsEditorPersistListener implements CaretListener {
 		}else {
 			Collections.sort(distinctPersists);
 			listModel.clear();
-			listModel.addAll(distinctPersists);
+			for(String persist : distinctPersists) {
+				listModel.addElement(persist);
+			}
 			listPersist.setEnabled(true);
 		}
 	}
